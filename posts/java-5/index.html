@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -42,12 +42,12 @@ Lưu ý: StandardCharsets.UTF_8 giúp tránh lỗi encoding khi đọc/ghi file.
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.35b2896b31743d661fd733de1ee2155d455ab40db1eab0652f3e9f3140728b69.css" >
 
 
 
@@ -63,10 +63,10 @@ Lưu ý: StandardCharsets.UTF_8 giúp tránh lỗi encoding khi đọc/ghi file.
     
 
     
-      <link rel="canonical" href="http://localhost:1313/posts/java-5/">
+      <link rel="canonical" href="https://ndquan2110.github.io/posts/java-5/">
     
 
-    <meta property="og:url" content="http://localhost:1313/posts/java-5/">
+    <meta property="og:url" content="https://ndquan2110.github.io/posts/java-5/">
   <meta property="og:site_name" content="Quan&#39;s Blog">
   <meta property="og:title" content="Java: Làm việc với file và I/O">
   <meta property="og:description" content="Java cung cấp nhiều cách để đọc và ghi file, từ java.nio.file.Files đến BufferedReader/BufferedWriter. Quan trọng là quản lý tài nguyên đúng cách và chú ý encoding để tránh lỗi dữ liệu.
@@ -92,8 +92,10 @@ Lưu ý: StandardCharsets.UTF_8 giúp tránh lỗi encoding khi đọc/ghi file.
   <meta name="twitter:description" content="Java cung cấp nhiều cách để đọc và ghi file, từ java.nio.file.Files đến BufferedReader/BufferedWriter. Quan trọng là quản lý tài nguyên đúng cách và chú ý encoding để tránh lỗi dữ liệu.
 1. Sử dụng java.nio.file.Files Đọc file: import java.nio.file.*; import java.io.IOException; import java.nio.charset.StandardCharsets; public class Main { public static void main(String[] args) throws IOException { Path path = Paths.get(&#34;example.txt&#34;); String content = Files.readString(path, StandardCharsets.UTF_8); System.out.println(content); } } Ghi file: import java.nio.file.*; import java.io.IOException; import java.nio.charset.StandardCharsets; public class Main { public static void main(String[] args) throws IOException { Path path = Paths.get(&#34;output.txt&#34;); String text = &#34;Đây là nội dung ghi vào file.&#34;; Files.writeString(path, text, StandardCharsets.UTF_8); } } Lưu ý: StandardCharsets.UTF_8 giúp tránh lỗi encoding khi đọc/ghi file.">
 
+      
+    
 	
-  </head><body class="ma0 avenir bg-near-white development">
+  </head><body class="ma0 avenir bg-near-white production">
 
     
 
@@ -339,7 +341,7 @@ Lưu ý: StandardCharsets.UTF_8 giúp tránh lỗi encoding khi đọc/ghi file.
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://ndquan2110.github.io/" >
     &copy;  Quan's Blog 2025 
   </a>
     <div><div class="ananke-socials"></div>

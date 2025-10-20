@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Inheritance on Quan&#39;s Blog</title>
-    <link>http://localhost:1313/tags/inheritance/</link>
+    <link>https://ndquan2110.github.io/tags/inheritance/</link>
     <description>Recent content in Inheritance on Quan&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 17 Oct 2025 09:20:00 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/inheritance/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ndquan2110.github.io/tags/inheritance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java: Kế thừa và đa hình</title>
-      <link>http://localhost:1313/posts/java-3/</link>
+      <link>https://ndquan2110.github.io/posts/java-3/</link>
       <pubDate>Fri, 17 Oct 2025 09:20:00 +0700</pubDate>
-      <guid>http://localhost:1313/posts/java-3/</guid>
+      <guid>https://ndquan2110.github.io/posts/java-3/</guid>
       <description>&lt;p&gt;Trong Java, lập trình hướng đối tượng (OOP) cung cấp hai khái niệm quan trọng: &lt;strong&gt;kế thừa (inheritance)&lt;/strong&gt; và &lt;strong&gt;đa hình (polymorphism)&lt;/strong&gt;. Chúng giúp &lt;strong&gt;tái sử dụng mã nguồn, mở rộng chương trình và linh hoạt trong thiết kế&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-kế-thừa-inheritance&#34;&gt;1. Kế thừa (Inheritance)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Định nghĩa&lt;/strong&gt;: Kế thừa cho phép một lớp (subclass) sử dụng thuộc tính và phương thức của lớp khác (superclass).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cú pháp&lt;/strong&gt;:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SuperClass&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// Thuộc tính và phương thức&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;SubClass&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;extends&lt;/span&gt; SuperClass {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// Thuộc tính và phương thức riêng&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Lợi ích&lt;/strong&gt;:&lt;/p&gt;</description>
     </item>
   </channel>

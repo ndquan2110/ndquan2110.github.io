@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Intro on Quan&#39;s Blog</title>
-    <link>http://localhost:1313/tags/intro/</link>
+    <link>https://ndquan2110.github.io/tags/intro/</link>
     <description>Recent content in Intro on Quan&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 17 Oct 2025 20:16:49 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/intro/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ndquan2110.github.io/tags/intro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Xin chào mọi người!</title>
-      <link>http://localhost:1313/posts/hello-world/</link>
+      <link>https://ndquan2110.github.io/posts/hello-world/</link>
       <pubDate>Fri, 17 Oct 2025 20:16:49 +0700</pubDate>
-      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <guid>https://ndquan2110.github.io/posts/hello-world/</guid>
       <description>&lt;h1&gt;&lt;/h1&gt;&#xA;&lt;p&gt;Chào mừng bạn đến với &lt;strong&gt;blog cá nhân của mình&lt;/strong&gt; — nơi mình chia sẻ những kiến thức, kinh nghiệm và suy nghĩ trong quá trình &lt;strong&gt;học lập trình&lt;/strong&gt; 🎯&lt;/p&gt;&#xA;&lt;p&gt;Blog này được tạo bằng &lt;strong&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;&lt;/strong&gt; — một Static Site Generator mạnh mẽ, giúp mình dễ dàng viết và xuất bản bài viết nhanh chóng mà vẫn tối ưu hiệu năng.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-mục-tiêu-của-blog&#34;&gt;💡 Mục tiêu của blog&lt;/h2&gt;&#xA;&lt;p&gt;Mình muốn chia sẻ những gì mình học được về:&lt;/p&gt;</description>
     </item>
   </channel>
