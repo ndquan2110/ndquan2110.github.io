@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Java: Lập trình hướng đối tượng - Lớp và đối tượng | Quan&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Trong Java, lập trình hướng đối tượng (Object-Oriented Programming - OOP) là một cách tiếp cận thiết kế phần mềm bằng cách mô tả các thực thể trong chương trình dưới dạng đối tượng. Một số khái niệm cơ bản:
+1. Lớp (Class)
+
+Định nghĩa: Lớp là khuôn mẫu (template) để tạo ra các đối tượng. Nó xác định thuộc tính (fields) và hành vi (methods) mà các đối tượng cùng loại sẽ có.
+Cú pháp cơ bản:
+
+class ClassName {
+    // Thuộc tính
+    dataType attributeName;
+
+    // Phương thức
+    returnType methodName(parameters) {
+        // thân phương thức
+    }
+}
+2. Đối tượng (Object)
+
+Định nghĩa: Đối tượng là một thực thể cụ thể được tạo ra từ lớp. Nó có các thuộc tính cụ thể và có thể thực thi các phương thức của lớp.
+Cách khởi tạo:
+
+ClassName obj = new ClassName();
+3. Thuộc tính (Attribute / Field)
+
+Là dữ liệu hoặc trạng thái mà đối tượng giữ.
+Ví dụ: tên, tuổi, địa chỉ của một người.
+
+4. Phương thức (Method)
+
+Là hành vi hoặc chức năng mà đối tượng có thể thực hiện.
+Ví dụ: đi lại, nói chuyện, ăn uống.
+
+Ví dụ minh họa: Lớp Person và đối tượng
+// Định nghĩa lớp Person
+class Person {
+    // Thuộc tính
+    String name;
+    int age;
+
+    // Phương thức
+    void sayHello() {
+        System.out.println(&#34;Xin chào, tôi tên là &#34; &#43; name &#43; &#34;, tôi &#34; &#43; age &#43; &#34; tuổi.&#34;);
+    }
+}
+
+// Lớp chính để chạy chương trình
+public class Main {
+    public static void main(String[] args) {
+        // Khởi tạo đối tượng từ lớp Person
+        Person person1 = new Person();
+        person1.name = &#34;Quân&#34;;
+        person1.age = 20;
+
+        // Gọi phương thức của đối tượng
+        person1.sayHello();
+
+        // Khởi tạo thêm một đối tượng khác
+        Person person2 = new Person();
+        person2.name = &#34;Lan&#34;;
+        person2.age = 22;
+        person2.sayHello();
+    }
+}
+Giải thích:
+
+Person là lớp, định nghĩa thuộc tính name, age và phương thức sayHello().
+person1 và person2 là các đối tượng được tạo từ lớp Person.
+Các đối tượng có giá trị thuộc tính riêng và có thể gọi phương thức để thực hiện hành vi.
+
+
+5. Kết Luận:
+
+Lớp = Khuôn mẫu
+Đối tượng = Thực thể cụ thể từ lớp
+Thuộc tính = Dữ liệu của đối tượng
+Phương thức = Hành vi của đối tượng
+
+
+Tác giả: Nguyễn Đình Quân
+📅 Đăng ngày: 17/10/2025
+💬 Nếu bạn thấy bài viết hữu ích, hãy để lại bình luận hoặc chia sẻ nhé!">
+    <meta name="generator" content="Hugo 0.151.2">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/java-2/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/posts/java-2/">
+  <meta property="og:site_name" content="Quan&#39;s Blog">
+  <meta property="og:title" content="Java: Lập trình hướng đối tượng - Lớp và đối tượng">
+  <meta property="og:description" content="Trong Java, lập trình hướng đối tượng (Object-Oriented Programming - OOP) là một cách tiếp cận thiết kế phần mềm bằng cách mô tả các thực thể trong chương trình dưới dạng đối tượng. Một số khái niệm cơ bản:
+1. Lớp (Class) Định nghĩa: Lớp là khuôn mẫu (template) để tạo ra các đối tượng. Nó xác định thuộc tính (fields) và hành vi (methods) mà các đối tượng cùng loại sẽ có. Cú pháp cơ bản: class ClassName { // Thuộc tính dataType attributeName; // Phương thức returnType methodName(parameters) { // thân phương thức } } 2. Đối tượng (Object) Định nghĩa: Đối tượng là một thực thể cụ thể được tạo ra từ lớp. Nó có các thuộc tính cụ thể và có thể thực thi các phương thức của lớp. Cách khởi tạo: ClassName obj = new ClassName(); 3. Thuộc tính (Attribute / Field) Là dữ liệu hoặc trạng thái mà đối tượng giữ. Ví dụ: tên, tuổi, địa chỉ của một người. 4. Phương thức (Method) Là hành vi hoặc chức năng mà đối tượng có thể thực hiện. Ví dụ: đi lại, nói chuyện, ăn uống. Ví dụ minh họa: Lớp Person và đối tượng // Định nghĩa lớp Person class Person { // Thuộc tính String name; int age; // Phương thức void sayHello() { System.out.println(&#34;Xin chào, tôi tên là &#34; &#43; name &#43; &#34;, tôi &#34; &#43; age &#43; &#34; tuổi.&#34;); } } // Lớp chính để chạy chương trình public class Main { public static void main(String[] args) { // Khởi tạo đối tượng từ lớp Person Person person1 = new Person(); person1.name = &#34;Quân&#34;; person1.age = 20; // Gọi phương thức của đối tượng person1.sayHello(); // Khởi tạo thêm một đối tượng khác Person person2 = new Person(); person2.name = &#34;Lan&#34;; person2.age = 22; person2.sayHello(); } } Giải thích: Person là lớp, định nghĩa thuộc tính name, age và phương thức sayHello(). person1 và person2 là các đối tượng được tạo từ lớp Person. Các đối tượng có giá trị thuộc tính riêng và có thể gọi phương thức để thực hiện hành vi. 5. Kết Luận: Lớp = Khuôn mẫu Đối tượng = Thực thể cụ thể từ lớp Thuộc tính = Dữ liệu của đối tượng Phương thức = Hành vi của đối tượng Tác giả: Nguyễn Đình Quân
+📅 Đăng ngày: 17/10/2025
+💬 Nếu bạn thấy bài viết hữu ích, hãy để lại bình luận hoặc chia sẻ nhé!">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-17T09:10:00+07:00">
+    <meta property="article:modified_time" content="2025-10-17T09:10:00+07:00">
+    <meta property="article:tag" content="Oop">
+    <meta property="article:tag" content="Class">
+    <meta property="article:tag" content="Object">
+    <meta property="article:tag" content="Java">
+
+  <meta itemprop="name" content="Java: Lập trình hướng đối tượng - Lớp và đối tượng">
+  <meta itemprop="description" content="Trong Java, lập trình hướng đối tượng (Object-Oriented Programming - OOP) là một cách tiếp cận thiết kế phần mềm bằng cách mô tả các thực thể trong chương trình dưới dạng đối tượng. Một số khái niệm cơ bản:
+1. Lớp (Class) Định nghĩa: Lớp là khuôn mẫu (template) để tạo ra các đối tượng. Nó xác định thuộc tính (fields) và hành vi (methods) mà các đối tượng cùng loại sẽ có. Cú pháp cơ bản: class ClassName { // Thuộc tính dataType attributeName; // Phương thức returnType methodName(parameters) { // thân phương thức } } 2. Đối tượng (Object) Định nghĩa: Đối tượng là một thực thể cụ thể được tạo ra từ lớp. Nó có các thuộc tính cụ thể và có thể thực thi các phương thức của lớp. Cách khởi tạo: ClassName obj = new ClassName(); 3. Thuộc tính (Attribute / Field) Là dữ liệu hoặc trạng thái mà đối tượng giữ. Ví dụ: tên, tuổi, địa chỉ của một người. 4. Phương thức (Method) Là hành vi hoặc chức năng mà đối tượng có thể thực hiện. Ví dụ: đi lại, nói chuyện, ăn uống. Ví dụ minh họa: Lớp Person và đối tượng // Định nghĩa lớp Person class Person { // Thuộc tính String name; int age; // Phương thức void sayHello() { System.out.println(&#34;Xin chào, tôi tên là &#34; &#43; name &#43; &#34;, tôi &#34; &#43; age &#43; &#34; tuổi.&#34;); } } // Lớp chính để chạy chương trình public class Main { public static void main(String[] args) { // Khởi tạo đối tượng từ lớp Person Person person1 = new Person(); person1.name = &#34;Quân&#34;; person1.age = 20; // Gọi phương thức của đối tượng person1.sayHello(); // Khởi tạo thêm một đối tượng khác Person person2 = new Person(); person2.name = &#34;Lan&#34;; person2.age = 22; person2.sayHello(); } } Giải thích: Person là lớp, định nghĩa thuộc tính name, age và phương thức sayHello(). person1 và person2 là các đối tượng được tạo từ lớp Person. Các đối tượng có giá trị thuộc tính riêng và có thể gọi phương thức để thực hiện hành vi. 5. Kết Luận: Lớp = Khuôn mẫu Đối tượng = Thực thể cụ thể từ lớp Thuộc tính = Dữ liệu của đối tượng Phương thức = Hành vi của đối tượng Tác giả: Nguyễn Đình Quân
+📅 Đăng ngày: 17/10/2025
+💬 Nếu bạn thấy bài viết hữu ích, hãy để lại bình luận hoặc chia sẻ nhé!">
+  <meta itemprop="datePublished" content="2025-10-17T09:10:00+07:00">
+  <meta itemprop="dateModified" content="2025-10-17T09:10:00+07:00">
+  <meta itemprop="wordCount" content="412">
+  <meta itemprop="keywords" content="Oop,Class,Object,Java">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Java: Lập trình hướng đối tượng - Lớp và đối tượng">
+  <meta name="twitter:description" content="Trong Java, lập trình hướng đối tượng (Object-Oriented Programming - OOP) là một cách tiếp cận thiết kế phần mềm bằng cách mô tả các thực thể trong chương trình dưới dạng đối tượng. Một số khái niệm cơ bản:
+1. Lớp (Class) Định nghĩa: Lớp là khuôn mẫu (template) để tạo ra các đối tượng. Nó xác định thuộc tính (fields) và hành vi (methods) mà các đối tượng cùng loại sẽ có. Cú pháp cơ bản: class ClassName { // Thuộc tính dataType attributeName; // Phương thức returnType methodName(parameters) { // thân phương thức } } 2. Đối tượng (Object) Định nghĩa: Đối tượng là một thực thể cụ thể được tạo ra từ lớp. Nó có các thuộc tính cụ thể và có thể thực thi các phương thức của lớp. Cách khởi tạo: ClassName obj = new ClassName(); 3. Thuộc tính (Attribute / Field) Là dữ liệu hoặc trạng thái mà đối tượng giữ. Ví dụ: tên, tuổi, địa chỉ của một người. 4. Phương thức (Method) Là hành vi hoặc chức năng mà đối tượng có thể thực hiện. Ví dụ: đi lại, nói chuyện, ăn uống. Ví dụ minh họa: Lớp Person và đối tượng // Định nghĩa lớp Person class Person { // Thuộc tính String name; int age; // Phương thức void sayHello() { System.out.println(&#34;Xin chào, tôi tên là &#34; &#43; name &#43; &#34;, tôi &#34; &#43; age &#43; &#34; tuổi.&#34;); } } // Lớp chính để chạy chương trình public class Main { public static void main(String[] args) { // Khởi tạo đối tượng từ lớp Person Person person1 = new Person(); person1.name = &#34;Quân&#34;; person1.age = 20; // Gọi phương thức của đối tượng person1.sayHello(); // Khởi tạo thêm một đối tượng khác Person person2 = new Person(); person2.name = &#34;Lan&#34;; person2.age = 22; person2.sayHello(); } } Giải thích: Person là lớp, định nghĩa thuộc tính name, age và phương thức sayHello(). person1 và person2 là các đối tượng được tạo từ lớp Person. Các đối tượng có giá trị thuộc tính riêng và có thể gọi phương thức để thực hiện hành vi. 5. Kết Luận: Lớp = Khuôn mẫu Đối tượng = Thực thể cụ thể từ lớp Thuộc tính = Dữ liệu của đối tượng Phương thức = Hành vi của đối tượng Tác giả: Nguyễn Đình Quân
+📅 Đăng ngày: 17/10/2025
+💬 Nếu bạn thấy bài viết hữu ích, hãy để lại bình luận hoặc chia sẻ nhé!">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+
+  
+  <header class="relative bg-gradient-dark">
+    <div class="container tc center white">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quan&#39;s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/posts/" title="Blog page">
+              Blog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+      
+        <a class="ml3 f6 white-80 no-underline" href="https://github.com/ndquan2110/ndquan2110.github.io.git" target="_blank" rel="noopener">GitHub</a>
+      
+    </div>
+  </div>
+</nav>
+
+      <div class="pv5 ph3 ph4-ns">
+        <h1 class="f1 fw7 lh-title mb2 animate-fade">
+          Java: Lập trình hướng đối tượng - Lớp và đối tượng
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+<style>
+.header-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+}
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #111, #333);
+}
+.animate-fade {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 1s ease forwards;
+}
+.animate-slide {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeInUp 1.4s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+    <main class="pb7" role="main">
+      
+
+<main class="single-magazine">
+  <article>
+    <div class="content">
+      <p>Trong <strong>Java</strong>, lập trình hướng đối tượng (Object-Oriented Programming - OOP) là một cách tiếp cận thiết kế phần mềm bằng cách <strong>mô tả các thực thể trong chương trình dưới dạng đối tượng</strong>. Một số khái niệm cơ bản:</p>
+<h2 id="1-lớp-class">1. Lớp (Class)</h2>
+<ul>
+<li><strong>Định nghĩa</strong>: Lớp là khuôn mẫu (template) để tạo ra các đối tượng. Nó xác định <strong>thuộc tính (fields)</strong> và <strong>hành vi (methods)</strong> mà các đối tượng cùng loại sẽ có.</li>
+<li><strong>Cú pháp cơ bản</strong>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassName</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Thuộc tính</span>
+</span></span><span style="display:flex;"><span>    dataType attributeName;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Phương thức</span>
+</span></span><span style="display:flex;"><span>    returnType <span style="color:#a6e22e">methodName</span>(parameters) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// thân phương thức</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="2-đối-tượng-object">2. Đối tượng (Object)</h2>
+<ul>
+<li><strong>Định nghĩa</strong>: Đối tượng là một thực thể cụ thể được tạo ra từ lớp. Nó có các <strong>thuộc tính cụ thể</strong> và có thể thực thi các <strong>phương thức</strong> của lớp.</li>
+<li><strong>Cách khởi tạo</strong>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ClassName obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ClassName();
+</span></span></code></pre></div><h2 id="3-thuộc-tính-attribute--field">3. Thuộc tính (Attribute / Field)</h2>
+<ul>
+<li>Là dữ liệu hoặc trạng thái mà đối tượng giữ.</li>
+<li>Ví dụ: tên, tuổi, địa chỉ của một người.</li>
+</ul>
+<h2 id="4-phương-thức-method">4. Phương thức (Method)</h2>
+<ul>
+<li>Là hành vi hoặc chức năng mà đối tượng có thể thực hiện.</li>
+<li>Ví dụ: đi lại, nói chuyện, ăn uống.</li>
+</ul>
+<h2 id="ví-dụ-minh-họa-lớp-person-và-đối-tượng">Ví dụ minh họa: Lớp <code>Person</code> và đối tượng</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Định nghĩa lớp Person</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Thuộc tính</span>
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Phương thức</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sayHello</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Xin chào, tôi tên là &#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, tôi &#34;</span> <span style="color:#f92672">+</span> age <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; tuổi.&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Lớp chính để chạy chương trình</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Khởi tạo đối tượng từ lớp Person</span>
+</span></span><span style="display:flex;"><span>        Person person1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person();
+</span></span><span style="display:flex;"><span>        person1.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Quân&#34;</span>;
+</span></span><span style="display:flex;"><span>        person1.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> 20;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Gọi phương thức của đối tượng</span>
+</span></span><span style="display:flex;"><span>        person1.<span style="color:#a6e22e">sayHello</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Khởi tạo thêm một đối tượng khác</span>
+</span></span><span style="display:flex;"><span>        Person person2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person();
+</span></span><span style="display:flex;"><span>        person2.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Lan&#34;</span>;
+</span></span><span style="display:flex;"><span>        person2.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> 22;
+</span></span><span style="display:flex;"><span>        person2.<span style="color:#a6e22e">sayHello</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="giải-thích">Giải thích:</h3>
+<ol>
+<li><code>Person</code> là <strong>lớp</strong>, định nghĩa <strong>thuộc tính</strong> <code>name</code>, <code>age</code> và <strong>phương thức</strong> <code>sayHello()</code>.</li>
+<li><code>person1</code> và <code>person2</code> là các <strong>đối tượng</strong> được tạo từ lớp <code>Person</code>.</li>
+<li>Các đối tượng có <strong>giá trị thuộc tính riêng</strong> và có thể gọi phương thức để thực hiện hành vi.</li>
+</ol>
+<hr>
+<h2 id="5-kết-luận">5. Kết Luận:</h2>
+<ul>
+<li>Lớp = Khuôn mẫu</li>
+<li>Đối tượng = Thực thể cụ thể từ lớp</li>
+<li>Thuộc tính = Dữ liệu của đối tượng</li>
+<li>Phương thức = Hành vi của đối tượng</li>
+</ul>
+<hr>
+<p><strong>Tác giả:</strong> Nguyễn Đình Quân<br>
+📅 <em>Đăng ngày: 17/10/2025</em><br>
+💬 <em>Nếu bạn thấy bài viết hữu ích, hãy để lại bình luận hoặc chia sẻ nhé!</em></p>
+
+    </div>
+    <ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/oop/" class="tag-badge">Oop</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/class/" class="tag-badge">Class</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/object/" class="tag-badge">Object</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/java/" class="tag-badge">Java</a>
+   </li>
+  
+</ul>
+
+  </article>
+</main>
+
+<style>
+.single-magazine {
+  max-width: 900px;
+  margin: 3rem auto;
+  font-family: "Playfair Display", serif;
+  color: #111;
+}
+.single-magazine h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+.single-magazine time {
+  color: #6b7280;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+.single-magazine .content p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+.single-magazine .content img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+</style>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  Quan's Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

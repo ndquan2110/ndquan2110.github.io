@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Java: Kế thừa và đa hình | Quan&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Trong Java, lập trình hướng đối tượng (OOP) cung cấp hai khái niệm quan trọng: kế thừa (inheritance) và đa hình (polymorphism). Chúng giúp tái sử dụng mã nguồn, mở rộng chương trình và linh hoạt trong thiết kế.
+1. Kế thừa (Inheritance)
+
+Định nghĩa: Kế thừa cho phép một lớp (subclass) sử dụng thuộc tính và phương thức của lớp khác (superclass).
+Cú pháp:
+
+class SuperClass {
+    // Thuộc tính và phương thức
+}
+
+class SubClass extends SuperClass {
+    // Thuộc tính và phương thức riêng
+}
+
+
+Lợi ích:">
+    <meta name="generator" content="Hugo 0.151.2">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/java-3/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/posts/java-3/">
+  <meta property="og:site_name" content="Quan&#39;s Blog">
+  <meta property="og:title" content="Java: Kế thừa và đa hình">
+  <meta property="og:description" content="Trong Java, lập trình hướng đối tượng (OOP) cung cấp hai khái niệm quan trọng: kế thừa (inheritance) và đa hình (polymorphism). Chúng giúp tái sử dụng mã nguồn, mở rộng chương trình và linh hoạt trong thiết kế.
+1. Kế thừa (Inheritance) Định nghĩa: Kế thừa cho phép một lớp (subclass) sử dụng thuộc tính và phương thức của lớp khác (superclass). Cú pháp: class SuperClass { // Thuộc tính và phương thức } class SubClass extends SuperClass { // Thuộc tính và phương thức riêng } Lợi ích:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-17T09:20:00+07:00">
+    <meta property="article:modified_time" content="2025-10-17T09:20:00+07:00">
+    <meta property="article:tag" content="Inheritance">
+    <meta property="article:tag" content="Polymorphism">
+    <meta property="article:tag" content="Java">
+
+  <meta itemprop="name" content="Java: Kế thừa và đa hình">
+  <meta itemprop="description" content="Trong Java, lập trình hướng đối tượng (OOP) cung cấp hai khái niệm quan trọng: kế thừa (inheritance) và đa hình (polymorphism). Chúng giúp tái sử dụng mã nguồn, mở rộng chương trình và linh hoạt trong thiết kế.
+1. Kế thừa (Inheritance) Định nghĩa: Kế thừa cho phép một lớp (subclass) sử dụng thuộc tính và phương thức của lớp khác (superclass). Cú pháp: class SuperClass { // Thuộc tính và phương thức } class SubClass extends SuperClass { // Thuộc tính và phương thức riêng } Lợi ích:">
+  <meta itemprop="datePublished" content="2025-10-17T09:20:00+07:00">
+  <meta itemprop="dateModified" content="2025-10-17T09:20:00+07:00">
+  <meta itemprop="wordCount" content="386">
+  <meta itemprop="keywords" content="Inheritance,Polymorphism,Java">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Java: Kế thừa và đa hình">
+  <meta name="twitter:description" content="Trong Java, lập trình hướng đối tượng (OOP) cung cấp hai khái niệm quan trọng: kế thừa (inheritance) và đa hình (polymorphism). Chúng giúp tái sử dụng mã nguồn, mở rộng chương trình và linh hoạt trong thiết kế.
+1. Kế thừa (Inheritance) Định nghĩa: Kế thừa cho phép một lớp (subclass) sử dụng thuộc tính và phương thức của lớp khác (superclass). Cú pháp: class SuperClass { // Thuộc tính và phương thức } class SubClass extends SuperClass { // Thuộc tính và phương thức riêng } Lợi ích:">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+
+  
+  <header class="relative bg-gradient-dark">
+    <div class="container tc center white">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quan&#39;s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/posts/" title="Blog page">
+              Blog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+      
+        <a class="ml3 f6 white-80 no-underline" href="https://github.com/ndquan2110/ndquan2110.github.io.git" target="_blank" rel="noopener">GitHub</a>
+      
+    </div>
+  </div>
+</nav>
+
+      <div class="pv5 ph3 ph4-ns">
+        <h1 class="f1 fw7 lh-title mb2 animate-fade">
+          Java: Kế thừa và đa hình
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+<style>
+.header-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+}
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #111, #333);
+}
+.animate-fade {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 1s ease forwards;
+}
+.animate-slide {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeInUp 1.4s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+    <main class="pb7" role="main">
+      
+
+<main class="single-magazine">
+  <article>
+    <div class="content">
+      <p>Trong Java, lập trình hướng đối tượng (OOP) cung cấp hai khái niệm quan trọng: <strong>kế thừa (inheritance)</strong> và <strong>đa hình (polymorphism)</strong>. Chúng giúp <strong>tái sử dụng mã nguồn, mở rộng chương trình và linh hoạt trong thiết kế</strong>.</p>
+<h2 id="1-kế-thừa-inheritance">1. Kế thừa (Inheritance)</h2>
+<ul>
+<li><strong>Định nghĩa</strong>: Kế thừa cho phép một lớp (subclass) sử dụng thuộc tính và phương thức của lớp khác (superclass).</li>
+<li><strong>Cú pháp</strong>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SuperClass</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Thuộc tính và phương thức</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SubClass</span> <span style="color:#66d9ef">extends</span> SuperClass {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Thuộc tính và phương thức riêng</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>
+<p><strong>Lợi ích</strong>:</p>
+<ul>
+<li>Tái sử dụng mã nguồn</li>
+<li>Mở rộng chức năng mà không viết lại code</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-abstract-class">2. Abstract Class</h2>
+<ul>
+<li><strong>Định nghĩa</strong>: Lớp abstract là lớp không thể khởi tạo trực tiếp, có thể chứa <strong>phương thức abstract</strong> chưa có thân, buộc subclass triển khai.</li>
+<li><strong>Ví dụ</strong>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span> {
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">makeSound</span>(); <span style="color:#75715e">// phương thức trừu tượng</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">eat</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; đang ăn.&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span> <span style="color:#66d9ef">extends</span> Animal {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">makeSound</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; sủa: Woof!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="3-interface">3. Interface</h2>
+<ul>
+<li><strong>Định nghĩa</strong>: Interface định nghĩa các phương thức mà lớp implement phải triển khai. Java hỗ trợ đa kế thừa thông qua interface.</li>
+<li><strong>Ví dụ</strong>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Flyable</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fly</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bird</span> <span style="color:#66d9ef">implements</span> Flyable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fly</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Chim đang bay.&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="4-đa-hình-polymorphism">4. Đa hình (Polymorphism)</h2>
+<ul>
+<li><strong>Định nghĩa</strong>: Đa hình cho phép <strong>một đối tượng có thể được tham chiếu bởi nhiều kiểu khác nhau</strong>.</li>
+<li><strong>Ví dụ</strong>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        Animal myDog <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Dog(); <span style="color:#75715e">// tham chiếu đa hình</span>
+</span></span><span style="display:flex;"><span>        myDog.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Lucky&#34;</span>;
+</span></span><span style="display:flex;"><span>        myDog.<span style="color:#a6e22e">makeSound</span>(); <span style="color:#75715e">// Gọi phương thức của Dog</span>
+</span></span><span style="display:flex;"><span>        myDog.<span style="color:#a6e22e">eat</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Flyable myBird <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Bird();
+</span></span><span style="display:flex;"><span>        myBird.<span style="color:#a6e22e">fly</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>Ở ví dụ trên, <code>myDog</code> là <strong>đối tượng Dog</strong>, nhưng được tham chiếu bằng <strong>kiểu Animal</strong>, đây là đa hình thời gian chạy.</li>
+</ul>
+<hr>
+<h2 id="5-kết-luận">5. Kết Luận:</h2>
+<ul>
+<li><code>extends</code>: kế thừa từ lớp khác.</li>
+<li><code>abstract class</code>: lớp trừu tượng, không thể khởi tạo, chứa phương thức abstract.</li>
+<li><code>interface</code>: định nghĩa hợp đồng, lớp implement phải triển khai.</li>
+<li><strong>Polymorphism</strong>: cùng một đối tượng có thể hành xử khác nhau khi được tham chiếu bởi các kiểu cha hoặc interface.</li>
+</ul>
+<hr>
+<p><strong>Tác giả:</strong> Nguyễn Đình Quân<br>
+📅 <em>Đăng ngày: 17/10/2025</em><br>
+💬 <em>Nếu bạn thấy bài viết hữu ích, hãy để lại bình luận hoặc chia sẻ nhé!</em></p>
+
+    </div>
+    <ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/inheritance/" class="tag-badge">Inheritance</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/polymorphism/" class="tag-badge">Polymorphism</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/java/" class="tag-badge">Java</a>
+   </li>
+  
+</ul>
+
+  </article>
+</main>
+
+<style>
+.single-magazine {
+  max-width: 900px;
+  margin: 3rem auto;
+  font-family: "Playfair Display", serif;
+  color: #111;
+}
+.single-magazine h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+.single-magazine time {
+  color: #6b7280;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+.single-magazine .content p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+.single-magazine .content img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+</style>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  Quan's Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

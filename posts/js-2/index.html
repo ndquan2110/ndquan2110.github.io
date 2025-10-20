@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>JavaScript: Hàm, closure và scope | Quan&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="JavaScript là ngôn ngữ hàm-first, do đó hiểu rõ hàm, scope, hoisting và closure là rất quan trọng để viết code hiệu quả và tránh lỗi.
+1. Hàm (Function)
+
+Định nghĩa: Hàm là một khối code thực thi một nhiệm vụ cụ thể.
+Cú pháp:
+
+// Function declaration
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+// Function expression
+const greet2 = function(name) {
+    return `Hi, ${name}!`;
+};
+
+// Arrow function
+const greet3 = (name) =&gt; `Hey, ${name}!`;
+2. Scope (Phạm vi biến)
+
+Global scope: Biến được khai báo ngoài hàm hoặc khối, có thể truy cập từ mọi nơi.
+Local scope: Biến khai báo trong hàm, chỉ tồn tại trong hàm đó.
+
+let globalVar = &#39;I am global&#39;; // global scope
+
+function testScope() {
+    let localVar = &#39;I am local&#39;; // local scope
+    console.log(globalVar); // có thể truy cập
+    console.log(localVar);  // có thể truy cập
+}
+
+testScope();
+console.log(globalVar); // OK
+// console.log(localVar); // Lỗi: localVar is not defined
+Hoisting
+
+Biến và hàm được nâng lên đầu scope nhưng khác nhau với var, let, const.
+
+console.log(a); // undefined (hoisted)
+var a = 5;
+
+// console.log(b); // ReferenceError
+let b = 10;
+3. Closure
+
+Định nghĩa: Closure là hàm nhớ tham chiếu tới biến trong scope ngoài nó, ngay cả khi scope ngoài đã kết thúc.
+Ví dụ thực tế:
+
+function makeCounter() {
+    let count = 0; // biến private
+    return function() {
+        count&#43;&#43;;
+        return count;
+    };
+}
+
+const counter = makeCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+
+Trong ví dụ trên, hàm trả về nhớ biến count dù makeCounter đã kết thúc, đó là closure.
+
+4. Kết luận
+
+Hàm giúp tổ chức code và tái sử dụng logic.
+Scope xác định phạm vi truy cập của biến, cần hiểu để tránh lỗi.
+Hoisting: biết để tránh undefined hoặc ReferenceError.
+Closure là công cụ mạnh mẽ để tạo biến private, bộ đếm, callback, rất hữu ích trong lập trình JavaScript hiện đại.
+
+
+Tác giả: Nguyễn Đình Quân
+📅 Đăng ngày: 17/10/2025
+💬 Nếu bạn thấy bài viết hữu ích, hãy để lại bình luận hoặc chia sẻ nhé!">
+    <meta name="generator" content="Hugo 0.151.2">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/js-2/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/posts/js-2/">
+  <meta property="og:site_name" content="Quan&#39;s Blog">
+  <meta property="og:title" content="JavaScript: Hàm, closure và scope">
+  <meta property="og:description" content="JavaScript là ngôn ngữ hàm-first, do đó hiểu rõ hàm, scope, hoisting và closure là rất quan trọng để viết code hiệu quả và tránh lỗi.
+1. Hàm (Function) Định nghĩa: Hàm là một khối code thực thi một nhiệm vụ cụ thể. Cú pháp: // Function declaration function greet(name) { return `Hello, ${name}!`; } // Function expression const greet2 = function(name) { return `Hi, ${name}!`; }; // Arrow function const greet3 = (name) =&gt; `Hey, ${name}!`; 2. Scope (Phạm vi biến) Global scope: Biến được khai báo ngoài hàm hoặc khối, có thể truy cập từ mọi nơi. Local scope: Biến khai báo trong hàm, chỉ tồn tại trong hàm đó. let globalVar = &#39;I am global&#39;; // global scope function testScope() { let localVar = &#39;I am local&#39;; // local scope console.log(globalVar); // có thể truy cập console.log(localVar); // có thể truy cập } testScope(); console.log(globalVar); // OK // console.log(localVar); // Lỗi: localVar is not defined Hoisting Biến và hàm được nâng lên đầu scope nhưng khác nhau với var, let, const. console.log(a); // undefined (hoisted) var a = 5; // console.log(b); // ReferenceError let b = 10; 3. Closure Định nghĩa: Closure là hàm nhớ tham chiếu tới biến trong scope ngoài nó, ngay cả khi scope ngoài đã kết thúc. Ví dụ thực tế: function makeCounter() { let count = 0; // biến private return function() { count&#43;&#43;; return count; }; } const counter = makeCounter(); console.log(counter()); // 1 console.log(counter()); // 2 console.log(counter()); // 3 Trong ví dụ trên, hàm trả về nhớ biến count dù makeCounter đã kết thúc, đó là closure. 4. Kết luận Hàm giúp tổ chức code và tái sử dụng logic. Scope xác định phạm vi truy cập của biến, cần hiểu để tránh lỗi. Hoisting: biết để tránh undefined hoặc ReferenceError. Closure là công cụ mạnh mẽ để tạo biến private, bộ đếm, callback, rất hữu ích trong lập trình JavaScript hiện đại. Tác giả: Nguyễn Đình Quân
+📅 Đăng ngày: 17/10/2025
+💬 Nếu bạn thấy bài viết hữu ích, hãy để lại bình luận hoặc chia sẻ nhé!">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-17T10:10:00+07:00">
+    <meta property="article:modified_time" content="2025-10-17T10:10:00+07:00">
+    <meta property="article:tag" content="Function">
+    <meta property="article:tag" content="Closure">
+    <meta property="article:tag" content="Scope">
+    <meta property="article:tag" content="Javascript">
+
+  <meta itemprop="name" content="JavaScript: Hàm, closure và scope">
+  <meta itemprop="description" content="JavaScript là ngôn ngữ hàm-first, do đó hiểu rõ hàm, scope, hoisting và closure là rất quan trọng để viết code hiệu quả và tránh lỗi.
+1. Hàm (Function) Định nghĩa: Hàm là một khối code thực thi một nhiệm vụ cụ thể. Cú pháp: // Function declaration function greet(name) { return `Hello, ${name}!`; } // Function expression const greet2 = function(name) { return `Hi, ${name}!`; }; // Arrow function const greet3 = (name) =&gt; `Hey, ${name}!`; 2. Scope (Phạm vi biến) Global scope: Biến được khai báo ngoài hàm hoặc khối, có thể truy cập từ mọi nơi. Local scope: Biến khai báo trong hàm, chỉ tồn tại trong hàm đó. let globalVar = &#39;I am global&#39;; // global scope function testScope() { let localVar = &#39;I am local&#39;; // local scope console.log(globalVar); // có thể truy cập console.log(localVar); // có thể truy cập } testScope(); console.log(globalVar); // OK // console.log(localVar); // Lỗi: localVar is not defined Hoisting Biến và hàm được nâng lên đầu scope nhưng khác nhau với var, let, const. console.log(a); // undefined (hoisted) var a = 5; // console.log(b); // ReferenceError let b = 10; 3. Closure Định nghĩa: Closure là hàm nhớ tham chiếu tới biến trong scope ngoài nó, ngay cả khi scope ngoài đã kết thúc. Ví dụ thực tế: function makeCounter() { let count = 0; // biến private return function() { count&#43;&#43;; return count; }; } const counter = makeCounter(); console.log(counter()); // 1 console.log(counter()); // 2 console.log(counter()); // 3 Trong ví dụ trên, hàm trả về nhớ biến count dù makeCounter đã kết thúc, đó là closure. 4. Kết luận Hàm giúp tổ chức code và tái sử dụng logic. Scope xác định phạm vi truy cập của biến, cần hiểu để tránh lỗi. Hoisting: biết để tránh undefined hoặc ReferenceError. Closure là công cụ mạnh mẽ để tạo biến private, bộ đếm, callback, rất hữu ích trong lập trình JavaScript hiện đại. Tác giả: Nguyễn Đình Quân
+📅 Đăng ngày: 17/10/2025
+💬 Nếu bạn thấy bài viết hữu ích, hãy để lại bình luận hoặc chia sẻ nhé!">
+  <meta itemprop="datePublished" content="2025-10-17T10:10:00+07:00">
+  <meta itemprop="dateModified" content="2025-10-17T10:10:00+07:00">
+  <meta itemprop="wordCount" content="349">
+  <meta itemprop="keywords" content="Function,Closure,Scope,Javascript">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JavaScript: Hàm, closure và scope">
+  <meta name="twitter:description" content="JavaScript là ngôn ngữ hàm-first, do đó hiểu rõ hàm, scope, hoisting và closure là rất quan trọng để viết code hiệu quả và tránh lỗi.
+1. Hàm (Function) Định nghĩa: Hàm là một khối code thực thi một nhiệm vụ cụ thể. Cú pháp: // Function declaration function greet(name) { return `Hello, ${name}!`; } // Function expression const greet2 = function(name) { return `Hi, ${name}!`; }; // Arrow function const greet3 = (name) =&gt; `Hey, ${name}!`; 2. Scope (Phạm vi biến) Global scope: Biến được khai báo ngoài hàm hoặc khối, có thể truy cập từ mọi nơi. Local scope: Biến khai báo trong hàm, chỉ tồn tại trong hàm đó. let globalVar = &#39;I am global&#39;; // global scope function testScope() { let localVar = &#39;I am local&#39;; // local scope console.log(globalVar); // có thể truy cập console.log(localVar); // có thể truy cập } testScope(); console.log(globalVar); // OK // console.log(localVar); // Lỗi: localVar is not defined Hoisting Biến và hàm được nâng lên đầu scope nhưng khác nhau với var, let, const. console.log(a); // undefined (hoisted) var a = 5; // console.log(b); // ReferenceError let b = 10; 3. Closure Định nghĩa: Closure là hàm nhớ tham chiếu tới biến trong scope ngoài nó, ngay cả khi scope ngoài đã kết thúc. Ví dụ thực tế: function makeCounter() { let count = 0; // biến private return function() { count&#43;&#43;; return count; }; } const counter = makeCounter(); console.log(counter()); // 1 console.log(counter()); // 2 console.log(counter()); // 3 Trong ví dụ trên, hàm trả về nhớ biến count dù makeCounter đã kết thúc, đó là closure. 4. Kết luận Hàm giúp tổ chức code và tái sử dụng logic. Scope xác định phạm vi truy cập của biến, cần hiểu để tránh lỗi. Hoisting: biết để tránh undefined hoặc ReferenceError. Closure là công cụ mạnh mẽ để tạo biến private, bộ đếm, callback, rất hữu ích trong lập trình JavaScript hiện đại. Tác giả: Nguyễn Đình Quân
+📅 Đăng ngày: 17/10/2025
+💬 Nếu bạn thấy bài viết hữu ích, hãy để lại bình luận hoặc chia sẻ nhé!">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+
+  
+  <header class="relative bg-gradient-dark">
+    <div class="container tc center white">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quan&#39;s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/posts/" title="Blog page">
+              Blog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+      
+        <a class="ml3 f6 white-80 no-underline" href="https://github.com/ndquan2110/ndquan2110.github.io.git" target="_blank" rel="noopener">GitHub</a>
+      
+    </div>
+  </div>
+</nav>
+
+      <div class="pv5 ph3 ph4-ns">
+        <h1 class="f1 fw7 lh-title mb2 animate-fade">
+          JavaScript: Hàm, closure và scope
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+<style>
+.header-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+}
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #111, #333);
+}
+.animate-fade {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 1s ease forwards;
+}
+.animate-slide {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeInUp 1.4s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+    <main class="pb7" role="main">
+      
+
+<main class="single-magazine">
+  <article>
+    <div class="content">
+      <p>JavaScript là ngôn ngữ <strong>hàm-first</strong>, do đó hiểu rõ <strong>hàm, scope, hoisting và closure</strong> là rất quan trọng để viết code hiệu quả và tránh lỗi.</p>
+<h2 id="1-hàm-function">1. Hàm (Function)</h2>
+<ul>
+<li><strong>Định nghĩa</strong>: Hàm là một khối code thực thi một nhiệm vụ cụ thể.</li>
+<li><strong>Cú pháp</strong>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Function declaration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">name</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`Hello, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">!`</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Function expression
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">greet2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">name</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`Hi, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">!`</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Arrow function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">greet3</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">name</span>) =&gt; <span style="color:#e6db74">`Hey, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">!`</span>;
+</span></span></code></pre></div><h2 id="2-scope-phạm-vi-biến">2. Scope (Phạm vi biến)</h2>
+<ul>
+<li><strong>Global scope</strong>: Biến được khai báo ngoài hàm hoặc khối, có thể truy cập từ mọi nơi.</li>
+<li><strong>Local scope</strong>: Biến khai báo trong hàm, chỉ tồn tại trong hàm đó.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">globalVar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;I am global&#39;</span>; <span style="color:#75715e">// global scope
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testScope</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">localVar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;I am local&#39;</span>; <span style="color:#75715e">// local scope
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">globalVar</span>); <span style="color:#75715e">// có thể truy cập
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">localVar</span>);  <span style="color:#75715e">// có thể truy cập
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">testScope</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">globalVar</span>); <span style="color:#75715e">// OK
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// console.log(localVar); // Lỗi: localVar is not defined
+</span></span></span></code></pre></div><h3 id="hoisting">Hoisting</h3>
+<ul>
+<li>Biến và hàm được <strong>nâng lên đầu scope</strong> nhưng khác nhau với <code>var</code>, <code>let</code>, <code>const</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>); <span style="color:#75715e">// undefined (hoisted)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// console.log(b); // ReferenceError
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span></code></pre></div><h2 id="3-closure">3. Closure</h2>
+<ul>
+<li><strong>Định nghĩa</strong>: Closure là <strong>hàm nhớ tham chiếu tới biến trong scope ngoài nó</strong>, ngay cả khi scope ngoài đã kết thúc.</li>
+<li><strong>Ví dụ thực tế</strong>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">makeCounter</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// biến private
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">count</span>;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">counter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">makeCounter</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">counter</span>()); <span style="color:#75715e">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">counter</span>()); <span style="color:#75715e">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">counter</span>()); <span style="color:#75715e">// 3
+</span></span></span></code></pre></div><ul>
+<li>Trong ví dụ trên, hàm trả về <strong>nhớ biến <code>count</code></strong> dù <code>makeCounter</code> đã kết thúc, đó là closure.</li>
+</ul>
+<h2 id="4-kết-luận">4. Kết luận</h2>
+<ul>
+<li><strong>Hàm</strong> giúp tổ chức code và tái sử dụng logic.</li>
+<li><strong>Scope</strong> xác định phạm vi truy cập của biến, cần hiểu để tránh lỗi.</li>
+<li><strong>Hoisting</strong>: biết để tránh undefined hoặc ReferenceError.</li>
+<li><strong>Closure</strong> là công cụ mạnh mẽ để tạo <strong>biến private, bộ đếm, callback</strong>, rất hữu ích trong lập trình JavaScript hiện đại.</li>
+</ul>
+<hr>
+<p><strong>Tác giả:</strong> Nguyễn Đình Quân<br>
+📅 <em>Đăng ngày: 17/10/2025</em><br>
+💬 <em>Nếu bạn thấy bài viết hữu ích, hãy để lại bình luận hoặc chia sẻ nhé!</em></p>
+
+    </div>
+    <ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/function/" class="tag-badge">Function</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/closure/" class="tag-badge">Closure</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/scope/" class="tag-badge">Scope</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/javascript/" class="tag-badge">Javascript</a>
+   </li>
+  
+</ul>
+
+  </article>
+</main>
+
+<style>
+.single-magazine {
+  max-width: 900px;
+  margin: 3rem auto;
+  font-family: "Playfair Display", serif;
+  color: #111;
+}
+.single-magazine h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+.single-magazine time {
+  color: #6b7280;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+.single-magazine .content p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+.single-magazine .content img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+</style>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  Quan's Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
